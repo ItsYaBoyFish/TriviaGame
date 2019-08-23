@@ -34,6 +34,25 @@ span {
   color: #fff;
 }
 
+#result {
+  width: 80%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 3em;
+  text-align: center;
+  font-size: 25px;
+}
+
+#header {
+  margin-top: 3em;
+  width: 80%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 3em;
+  text-align: center;
+  font-size: 25px;
+}
+
 #game-div {
   width: 80%;
   height: 700px;
@@ -44,14 +63,7 @@ span {
   font-size: 25px;
 }
 
-#result {
-  width: 80%;
-  margin-right: auto;
-  margin-left: auto;
-  margin-top: 3em;
-  text-align: center;
-  font-size: 25px;
-}
+
 
 #finished-game {
   letter-spacing: 1.2px;

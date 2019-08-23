@@ -8,6 +8,7 @@ let countDownValue = 15;
 let time = $('#time');
 let clockRunning = false;
 let resultDIV = $('#result');
+var timer;
 // -----------------------------
 
 // console.log(answersChosen);
@@ -40,7 +41,12 @@ let Questions = [
 
 
 
+
+
 function loadTheGame() {
+  gameHolder.empty();
+  answersChosen = [];
+  guessesCorrect = 0;
   time.text(`00:${countDownValue}`)
   // Loading the page with questions and answers
   for (let i = 0; i < Questions.length; i++) {
@@ -67,26 +73,35 @@ function loadTheGame() {
 
 loadTheGame();
 
-$('.checkbox').on('click', function() {
+$(document).on('click','.checkbox', function() {
   let userInput = $(this).val();
   console.log(userInput);
   answersChosen.push(userInput)
   console.log(answersChosen);
 });
 
+// $('.checkbox').on('click', function() {
+//   let userInput = $(this).val();
+//   console.log(userInput);
+//   answersChosen.push(userInput)
+//   console.log(answersChosen);
+// });
+
 function checkAnswers() {
   resultDIV.empty(); 
   let p = $('<p>');
+  let guessesIncorrect = Questions.length - guessesCorrect;
   // Check to see if the user answered all questions. 
   for (let i = 0; i < answersChosen.length; i++) {
     if (answersChosen.includes(Questions[i].correctAnswer)) {
       guessesCorrect = guessesCorrect + 1;
       console.log(guessesCorrect);
-      // console.log(`Answers Right: ${guessesCorrect}`);
+      console.log(`Answers Right: ${guessesCorrect}`);
     } else {
-      guessesIncorrect = guessesIncorrect + 1;
+      //guessesIncorrect = guessesIncorrect + 1;
       // console.log(`Answers Wrong: ${guessesIncorrect}`);
     }
+    guessesIncorrect = Questions.length - guessesCorrect;
   }
   console.log(`Total Answers Right: ${guessesCorrect}`);
   console.log(`Total Answers Wrong: ${guessesIncorrect}`);
@@ -100,12 +115,15 @@ function checkAnswers() {
   resultDIV.prepend(p);
 }
 
-$('#finished-game').on('click', checkAnswers);
+$('#finished-game').on('click', function() {
+  checkAnswers();
+  clearInterval(timer)
+  time.text(`00:${countDownValue}`)
+});
 
 function loadTheCounter() {
-  clockRunning = true;
   var seconds = countDownValue;
-  var timer = setInterval(function() {
+  timer = setInterval(function() {
     time.text(`00:${seconds}`);
     seconds--;
     console.log(seconds);
@@ -122,4 +140,10 @@ function loadTheCounter() {
 };
 
 
-$('#start-game').on('click', loadTheCounter)
+$('#start-game').on('click', function() {
+  loadTheGame();
+  loadTheCounter();
+  resultDIV.empty();
+})
+
+
