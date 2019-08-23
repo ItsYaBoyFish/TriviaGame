@@ -4,6 +4,10 @@ let gameHolder = $('#game-div');
 let answersChosen = [];
 let guessesCorrect = 0;
 let guessesIncorrect = 0;
+let countDownValue = 15;
+let time = $('#time');
+let clockRunning = false;
+let resultDIV = $('#result');
 // -----------------------------
 
 // console.log(answersChosen);
@@ -37,6 +41,7 @@ let Questions = [
 
 
 function loadTheGame() {
+  time.text(`00:${countDownValue}`)
   // Loading the page with questions and answers
   for (let i = 0; i < Questions.length; i++) {
     let questionElement = $('<p>');
@@ -69,7 +74,8 @@ $('.checkbox').on('click', function() {
   console.log(answersChosen);
 });
 
-function checkAnswers() { 
+function checkAnswers() {
+  resultDIV.empty(); 
   let p = $('<p>');
   // Check to see if the user answered all questions. 
   for (let i = 0; i < answersChosen.length; i++) {
@@ -91,7 +97,29 @@ function checkAnswers() {
     p.css('background-color', 'red');
   }
   p.attr('class', 'space')
-  gameHolder.prepend(p);
+  resultDIV.prepend(p);
 }
 
 $('#finished-game').on('click', checkAnswers);
+
+function loadTheCounter() {
+  clockRunning = true;
+  var seconds = countDownValue;
+  var timer = setInterval(function() {
+    time.text(`00:${seconds}`);
+    seconds--;
+    console.log(seconds);
+    if (seconds <= 9) {
+      time.text(`00:0${seconds}`)
+    }
+    if (seconds === 0) {
+      alert('Time to restart')
+      clearInterval(timer)
+      time.text(`00:${countDownValue}`)
+      checkAnswers();
+    } 
+  }, 1000);
+};
+
+
+$('#start-game').on('click', loadTheCounter)
