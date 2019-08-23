@@ -4,6 +4,7 @@
 }
 
 body {
+  background: radial-gradient(#85b5fd, #3400f1);
   background-color: lightgrey;
 }
 
@@ -17,20 +18,20 @@ span {
 .game-title {
   font-size: 70px;
   margin-top: .3em;
-  color: blue;
+  color: white;
   font-family: Verdana, Geneva, Tahoma, sans-serif
 }
 
 .remaining-time {
   margin-top: .5em;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  color: red;
+  color: #fff;
 }
 
 .question {
   margin-top: 1em;
   margin-bottom: .3em;
-  color: red;
+  color: #fff;
 }
 
 #game-div {
@@ -44,16 +45,33 @@ span {
 }
 
 #finished-game {
+  letter-spacing: 1.2px;
   margin-top: 1em;
+  font-size: 18px;
   padding: 5px 10px;
-  border: solid 1px black;
-  color: red;
+  border: solid 1px;
+  border-radius: 10px;
+  color: green;
+  background-color: rgba(180, 201, 180, 0);
+}
+
+#finished-game:hover {
+  background-color: rgb(180, 201, 180);
 }
 
 #start-game {
+  letter-spacing: 1.2px;
   padding: 5px 10px;
-  border: solid 1px black;
-  color: blue;
+  font-size: 18px;
+  border: solid 1px;
+  border-radius: 10px;
+  color: green;
+  background-color: rgba(180, 201, 180, 0);
+}
+
+#start-game:hover {
+  background-color: rgb(180, 201, 180);
+  
 }
 
 .answer-option {
