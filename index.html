@@ -4,14 +4,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>Trivia Game</title>
   <script
   src="https://code.jquery.com/jquery-3.4.1.min.js"
   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
   crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-  <div id="images"></div>
-  <script src="app.js"></script>
+  <div id="game-div">
+    <h1 class='game-title'>Totally Trivia Trivia!</h1>
+    <h3 class="remaining-time">Time Remaining: <span></span></h3>
+    <button id='start-game'>Start Game</button>
+    <button id='finished-game'>Finished!</button>
+    <!-- <p>Question Here: Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa sunt neque obcaecati in repellendus! Fugiat nobis quibusdam dolorem doloribus omnis.</p> -->
+   <!-- <form action="">
+     <input type="checkbox" value="option1">option1</input>
+     <input type="checkbox" value="option2">option2
+     <input type="checkbox" value="option3">option3
+     <input type="checkbox" value="option4">option4
+   </form> -->
+  </div>
+  <script src="assets/js/game.js"></script>
 </body>
 </html>

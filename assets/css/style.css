@@ -1,0 +1,69 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: lightgrey;
+}
+
+span {
+  padding-top: 1em;
+  padding-right: 1em;
+  padding-bottom: 1em;
+  padding-left: 0.3em;
+}
+
+.game-title {
+  font-size: 70px;
+  margin-top: .3em;
+  color: blue;
+  font-family: Verdana, Geneva, Tahoma, sans-serif
+}
+
+.remaining-time {
+  margin-top: .5em;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: red;
+}
+
+.question {
+  margin-top: 1em;
+  margin-bottom: .3em;
+  color: red;
+}
+
+#game-div {
+  width: 80%;
+  height: 700px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 3em;
+  text-align: center;
+  font-size: 25px;
+}
+
+#finished-game {
+  margin-top: 1em;
+  padding: 5px 10px;
+  border: solid 1px black;
+  color: red;
+}
+
+#start-game {
+  padding: 5px 10px;
+  border: solid 1px black;
+  color: blue;
+}
+
+.answer-option {
+  color: black;
+}
+
+.space {
+  color: #fff;
+  margin-top: 2em;
+  border-radius: 10px;
+  padding: 5px;
+}
+
