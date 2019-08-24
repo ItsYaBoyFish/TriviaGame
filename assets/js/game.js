@@ -39,10 +39,6 @@ let Questions = [
   }
 ]
 
-
-
-
-
 function loadTheGame() {
   gameHolder.empty();
   answersChosen = [];
@@ -60,7 +56,7 @@ function loadTheGame() {
       let answerElement = $('<input>');
       let span = $('<span>');
       answerElement.attr('class', 'checkbox')
-      answerElement.attr('type', 'checkbox');
+      answerElement.attr('type', 'radio');
       answerElement.attr('value', `${Questions[i].answers[j]}`)
       span.text(`${Questions[i].answers[j]}`);
       gameHolder.append(answerElement);
